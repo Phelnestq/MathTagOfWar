@@ -113,9 +113,10 @@ MathTagOfWar.exe
 - [x] Timed answer mechanic
 - [x] Two-player local mode
 - [x] Strength/weakness system based on correct/wrong answers
-- [ ] ASCII tug-of-war rope display in terminal
-- [ ] Computer opponent with difficulty-scaled AI
-- [ ] Score history and session statistics
+- [x] Class architecture defined for all major components
+- [ ] ASCII tug-of-war rope display in terminal *(class skeleton in place, output not yet implemented)*
+- [ ] Computer opponent with difficulty-scaled AI *(class skeleton in place, logic not yet implemented)*
+- [ ] Score history and session statistics *(class skeleton in place, logic not yet implemented)*
 - [ ] Sound effects (terminal beep on timeout)
 - [ ] Leaderboard / high score saving
 
