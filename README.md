@@ -4,6 +4,9 @@ A terminal-based math competition game for children built in C++ using object-or
 
 > **Status:** 🚧 In active development — core game logic and question engine are functional. ASCII tug-of-war display and computer opponent AI are planned for upcoming releases.
 
+> 🖥️ **A fully graphical Qt6 version of this game is also available:**
+> 👉 [MathTugOfWar — Qt Edition](https://github.com/Phelnestq/MathTugOfWar-Qt) — animated rope, silhouette figures, session scoring, and responsive UI.
+
 ---
 
 ## What it does
@@ -30,10 +33,10 @@ Players select their difficulty before the game starts, based on education level
 
 | Level | Target audience | Example topics |
 |-------|----------------|----------------|
-| **Primary Lower** | Ages 6–9 | Addition, subtraction, basic multiplication |
-| **Primary Upper** | Ages 10–12 | Long multiplication, division, fractions |
-| **Secondary** | Ages 13–18 | Algebra, geometry, percentages, powers |
-| **University** | Age 18+ | Calculus, statistics, linear algebra |
+| **Primary Easy** | Ages 5–8 (KS1/KS2) | Addition, subtraction, times tables up to 5×5 |
+| **Primary Hard** | Ages 9–11 (KS2) | Full 12×12 times tables, division, BODMAS, squares |
+| **Secondary Easy** | Ages 11–14 (KS3) | Linear equations, percentages, negative numbers, powers |
+| **Secondary Hard** | Ages 14–16 (GCSE) | Quadratics, simultaneous equations, Pythagoras, index laws |
 
 ---
 
@@ -64,24 +67,28 @@ This project was built to explore and apply object-oriented programming in C++:
 ## Project structure
 
 ```
-MathTagOfWar/
+MathTugOfWar/
 │
 ├── README.md
+├── CMakeLists.txt            ← Build configuration
 ├── main.cpp                  ← Entry point, game loop
 │
 ├── include/
-│   ├── Player.h              ← Player class definition
+│   ├── Player.h              ← Base player class
 │   ├── ComputerPlayer.h      ← Computer opponent (inherits Player)
-│   ├── Question.h            ← Question structure and generation
-│   ├── GameEngine.h          ← Core game logic and state
-│   └── DifficultyManager.h  ← Difficulty scaling and level definitions
+│   ├── Question.h            ← Question data and answer checking
+│   ├── QuestionGenerator.h   ← Generates questions by difficulty
+│   ├── TugOfWarBar.h         ← ASCII tug-of-war display
+│   ├── ScoreTracker.h        ← Tracks round wins
+│   └── Difficulty.h          ← Difficulty enum
 │
 └── src/
     ├── Player.cpp
     ├── ComputerPlayer.cpp
     ├── Question.cpp
-    ├── GameEngine.cpp
-    └── DifficultyManager.cpp
+    ├── QuestionGenerator.cpp
+    ├── TugOfWarBar.cpp
+    └── ScoreTracker.cpp
 ```
 
 ---
@@ -92,16 +99,16 @@ MathTagOfWar/
 
 **Compile:**
 ```bash
-g++ -std=c++17 -o MathTagOfWar main.cpp src/*.cpp
+g++ -std=c++17 -I include main.cpp src/*.cpp -o MathTugOfWar
 ```
 
 **Run:**
 ```bash
-./MathTagOfWar
+./MathTugOfWar
 ```
 On Windows:
 ```bash
-MathTagOfWar.exe
+MathTugOfWar.exe
 ```
 
 ---
@@ -109,16 +116,25 @@ MathTagOfWar.exe
 ## Roadmap
 
 - [x] Core game loop and turn logic
-- [x] Question generation by difficulty level
+- [x] Question generation by difficulty level (KS1–GCSE British curriculum)
 - [x] Timed answer mechanic
-- [x] Two-player local mode
+- [x] Computer opponent with difficulty-scaled accuracy and response time
 - [x] Strength/weakness system based on correct/wrong answers
-- [x] Class architecture defined for all major components
-- [ ] ASCII tug-of-war rope display in terminal *(class skeleton in place, output not yet implemented)*
-- [ ] Computer opponent with difficulty-scaled AI *(class skeleton in place, logic not yet implemented)*
-- [ ] Score history and session statistics *(class skeleton in place, logic not yet implemented)*
+- [x] ASCII tug-of-war rope display with player names
+- [x] Stick figure display leaning based on game position
+- [x] Score tracking and session statistics
+- [ ] Full two-player local mode
 - [ ] Sound effects (terminal beep on timeout)
 - [ ] Leaderboard / high score saving
+
+---
+
+## Related Repository
+
+A fully graphical Qt6 version of this game is in active development:
+👉 [MathTugOfWar — Qt Edition](https://github.com/Phelnestq/MathTugOfWar-Qt)
+
+The Qt version shares all core game logic from this repo and adds a full graphical interface with animated rope, silhouette figures, session scoring, and responsive layout.
 
 ---
 
