@@ -2,7 +2,7 @@
 
 A terminal-based math competition game for children built in C++ using object-oriented programming. Players compete in a tug-of-war by answering math questions — answer correctly and you pull the rope, answer wrong and you get pulled back.
 
-> **Status:** 🚧 In active development — core game logic and question engine are functional. ASCII tug-of-war display and computer opponent AI are planned for upcoming releases.
+> **Status:** ✅ Core terminal version complete and playable — Player vs Computer with ASCII tug-of-war display, curriculum-accurate question generation, and session scoring all implemented.
 
 > 🖥️ **A fully graphical Qt6 version of this game is also available:**
 > 👉 [MathTugOfWar — Qt Edition](https://github.com/Phelnestq/MathTugOfWar-Qt) — animated rope, silhouette figures, session scoring, and responsive UI.
